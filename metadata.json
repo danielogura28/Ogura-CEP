@@ -1,0 +1,8 @@
+{
+  "name": "Remix App - CEP 2026 - Petropol pré versão final",
+  "description": "",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

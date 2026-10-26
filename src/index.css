@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 8mm 8mm 8mm 8mm;
+    }
+
+    /* Reset background and text colors for high-contrast print output */
+    html, body {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      font-size: 10pt;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      height: auto !important;
+      min-height: 100% !important;
+      overflow: visible !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #root {
+      height: auto !important;
+      overflow: visible !important;
+      width: 100% !important;
+    }
+
+    /* Elements hidden in print */
+    .no-print,
+    .no-print-area {
+      display: none !important;
+    }
+
+    .print-only {
+      display: block !important;
+    }
+
+    /* Avoid breaking charts, tables, cards and signature sections mid-page */
+    .page-break-inside-avoid,
+    .print-section-block,
+    .avoid-break {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    .page-break-after {
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+
+    /* Remove screen scrolling and fixed modal restrictions during printing */
+    .h-screen,
+    .w-screen,
+    .overflow-hidden,
+    .overflow-y-auto {
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
+    /* Ensure printable sheet has zero screen shadow and crisp borders */
+    .printable-sheet-wrapper {
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      background: #ffffff !important;
+    }
+  }
+}
