@@ -27,9 +27,11 @@ import { CriticalAnalysisModal } from './components/CriticalAnalysisModal';
 import { PrintPreviewModal } from './components/PrintPreviewModal';
 import { ReportArchiveModal } from './components/ReportArchiveModal';
 import { CapabilityTargetsModal } from './components/CapabilityTargetsModal';
+import { SecurityLoginGate } from './components/SecurityLoginGate';
 import { exportSpcToExcel } from './utils/spcExcelExporter';
 import { getAllArchivedReports, seedInitialReportsIfEmpty } from './utils/spcReportDatabase';
 import { getAllCapabilityTargets, resolveCapabilityTargets } from './utils/spcTargets';
+import { getAuthStatus, logoutSession } from './utils/spcAuth';
 
 const DEFAULT_CONFIG: CepAnalysisConfig = {
   chartType: 'I-MR',
@@ -81,6 +83,9 @@ export default function App() {
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
   const [archiveCount, setArchiveCount] = useState<number>(0);
   const [isTargetsModalOpen, setIsTargetsModalOpen] = useState(false);
+
+  // Autenticação Criptográfica Industrial Mandatória (Protegida por PBKDF2-SHA256 e lockout contra força bruta)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => getAuthStatus().isAuthenticated);
 
   // Análise Crítica e Planos de Ação (Ação Corretiva IATF / CAPA)
   const [criticalAnalysis, setCriticalAnalysis] = useState<CriticalAnalysisData | null>(null);
@@ -354,6 +359,11 @@ export default function App() {
     }
   };
 
+  // Se o usuário não estiver autenticado, bloquear completamente o acesso às ferramentas e dados
+  if (!isAuthenticated) {
+    return <SecurityLoginGate onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-100 font-sans text-slate-800">
       {/* PTP Top Header */}
@@ -383,6 +393,10 @@ export default function App() {
         onOpenCriticalAnalysis={() => handleOpenCriticalAnalysis()}
         hasCriticalIssue={hasCriticalIssue}
         hasCriticalAnalysisSaved={Boolean(criticalAnalysis)}
+        onLockApp={() => {
+          logoutSession();
+          setIsAuthenticated(false);
+        }}
       />
 
       {/* Main PTP Workspace */}

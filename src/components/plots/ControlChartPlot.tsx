@@ -497,8 +497,8 @@ export const ControlChartPlot: React.FC<ControlChartPlotProps> = ({
               <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
               <span>
                 {isRange
-                  ? 'Carta de Dispersão (Manual AIAG SPC 4ª Ed.)'
-                  : 'Carta de Controle Shewhart (Manual AIAG SPC)'}
+                  ? 'Carta de Dispersão (Manual AIAG – 2ª edição)'
+                  : 'Carta de Controle Shewhart (Manual AIAG – 2ª edição)'}
               </span>
             </div>
             <span className="text-[10px] bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded border border-blue-200">

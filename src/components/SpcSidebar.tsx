@@ -135,7 +135,7 @@ export const SpcSidebar: React.FC<SpcSidebarProps> = ({
                   onChange={(e) => update({ manualStandard: e.target.value as SpcManualStandard })}
                   className="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-800 focus:border-red-700 focus:outline-hidden font-medium"
                 >
-                  <option value="AIAG_SPC_4TH">Manual AIAG CEP (4ª Edição)</option>
+                  <option value="AIAG_SPC_4TH">Manual AIAG – 2ª edição</option>
                   <option value="AIAG_VDA_1ST">Manual AIAG & VDA (1ª Edição)</option>
                 </select>
               </div>
@@ -266,7 +266,7 @@ export const SpcSidebar: React.FC<SpcSidebarProps> = ({
                   </span>
                 ) : (
                   <span>
-                    <strong>AIAG CEP (4ª Ed.):</strong> Referência clássica da IATF 16949 para cartas de controle Shewhart e índices Cp/Cpk/Pp/Ppk.
+                    <strong>Manual AIAG – 2ª edição:</strong> Referência clássica da IATF 16949 para cartas de controle Shewhart e índices Cp/Cpk/Pp/Ppk.
                   </span>
                 )}
               </div>

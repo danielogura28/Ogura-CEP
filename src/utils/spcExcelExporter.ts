@@ -156,7 +156,7 @@ export async function exportSpcToExcel(options: SpcExcelExportOptions): Promise<
   worksheet.mergeCells(`A${currentRow}:I${currentRow}`);
   const subTitleCell = worksheet.getCell(`A${currentRow}`);
   subTitleCell.value = `RELATÓRIO OFICIAL DE HOMOLOGAÇÃO DE PROCESSO • ${
-    config.manualStandard === 'AIAG_VDA_1ST' ? 'MANUAL AIAG & VDA (1ª EDIÇÃO)' : 'MANUAL AIAG CEP (4ª EDIÇÃO)'
+    config.manualStandard === 'AIAG_VDA_1ST' ? 'MANUAL AIAG & VDA (1ª EDIÇÃO)' : 'MANUAL AIAG – 2ª EDIÇÃO'
   } • ${targetName.toUpperCase()} (Cpk ≥ ${targetCpk.toFixed(2)} | Ppk ≥ ${targetPpk.toFixed(2)})`;
   subTitleCell.font = { name: 'Calibri', size: 9.5, bold: true, color: { argb: 'FFE2E8F0' } };
   subTitleCell.fill = blueSubHeaderFill;

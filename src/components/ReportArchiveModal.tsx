@@ -606,7 +606,7 @@ export const ReportArchiveModal: React.FC<ReportArchiveModalProps> = ({
               title="Filtrar por Norma de Cálculo"
             >
               <option value="ALL">Normas: Todas</option>
-              <option value="AIAG_SPC_4TH">AIAG 4ª Edição</option>
+              <option value="AIAG_SPC_4TH">Manual AIAG – 2ª edição</option>
               <option value="AIAG_VDA_1ST">AIAG & VDA 1ª Ed.</option>
             </select>
 
@@ -877,7 +877,7 @@ export const ReportArchiveModal: React.FC<ReportArchiveModalProps> = ({
                           <span>Ficha de Consulta Detalhada do Estudo ({rep.id})</span>
                         </div>
                         <span className="text-[11px] text-slate-400 font-mono">
-                          Norma: {rep.config.manualStandard === 'AIAG_VDA_1ST' ? 'Harmonizado AIAG & VDA (1ª Ed.)' : 'AIAG SPC (4ª Edição)'}
+                          Norma: {rep.config.manualStandard === 'AIAG_VDA_1ST' ? 'Harmonizado AIAG & VDA (1ª Ed.)' : 'Manual AIAG – 2ª edição'}
                         </span>
                       </div>
 

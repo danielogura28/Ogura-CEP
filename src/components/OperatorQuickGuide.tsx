@@ -111,7 +111,7 @@ export const OperatorQuickGuide: React.FC<OperatorQuickGuideProps> = ({
         {/* Manual Standard Tag */}
         <div className="flex items-center gap-2 text-xs">
           <div className="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono text-[11px]">
-            Norma: <strong className="text-white">{isAIAG_VDA ? 'Manual AIAG & VDA (1ª Ed.)' : 'Manual AIAG CEP (4ª Ed.)'}</strong>
+            Norma: <strong className="text-white">{isAIAG_VDA ? 'Manual AIAG & VDA (1ª Ed.)' : 'Manual AIAG – 2ª edição'}</strong>
           </div>
           <div className="px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono text-[11px]">
             Metas: <strong className="text-amber-300">Cpk ≥ {benchmarkCpk.toFixed(2)}</strong> | <strong className="text-teal-300">Ppk ≥ {benchmarkPpk.toFixed(2)}</strong> ({targetName || (featureClassification === 'critical' ? 'Crítica' : 'Padrão')})
@@ -330,7 +330,7 @@ export const OperatorQuickGuide: React.FC<OperatorQuickGuideProps> = ({
           <div className="flex items-center justify-between mb-2">
             <h5 className="text-xs font-serif font-bold text-slate-800 flex items-center gap-1.5">
               <BookOpen className="w-3.5 h-3.5 text-blue-600" />
-              Matriz Oficial de Decisão — {isAIAG_VDA ? 'Manual Harmonizado AIAG & VDA (1ª Edição)' : 'Manual de Referência AIAG CEP (4ª Edição)'}
+              Matriz Oficial de Decisão — {isAIAG_VDA ? 'Manual Harmonizado AIAG & VDA (1ª Edição)' : 'Manual AIAG – 2ª edição'}
             </h5>
             <span className="text-[11px] text-slate-500">
               Posicionamento atual: <strong className={status === 'VERDE' ? 'text-emerald-700' : status === 'AMARELO' ? 'text-amber-700' : 'text-red-700'}>

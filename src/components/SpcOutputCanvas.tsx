@@ -348,13 +348,13 @@ export const SpcOutputCanvas: React.FC<SpcOutputCanvasProps> = ({
             <p className="text-xs text-slate-500 mt-1">
               Avaliação de Estabilidade Shewhart, Regras de Nelson, Índices de Capabilidade (Cp / Cpk) conforme{' '}
               <strong className="text-slate-700 font-semibold">
-                {isAIAG_VDA ? 'Manual AIAG & VDA (1ª Edição)' : 'Manual AIAG CEP (4ª Edição)'}
+                {isAIAG_VDA ? 'Manual AIAG & VDA (1ª Edição)' : 'Manual AIAG – 2ª edição'}
               </strong>
             </p>
           </div>
 
           <div className="text-right text-xs text-slate-500">
-            <div>Norma: <strong className="text-slate-800 font-mono">{isAIAG_VDA ? 'AIAG & VDA 1ª Ed.' : 'AIAG 4ª Ed.'}</strong></div>
+            <div>Norma: <strong className="text-slate-800 font-mono">{isAIAG_VDA ? 'AIAG & VDA 1ª Ed.' : 'Manual AIAG – 2ª edição'}</strong></div>
             <div>Amostras: <strong className="text-slate-800 font-mono">{n}</strong> medições</div>
             <div>
               Metas: <strong className="text-red-800 font-mono">Cpk ≥ {targetCpk.toFixed(2)}</strong> | <strong className="text-blue-800 font-mono">Ppk ≥ {targetPpk.toFixed(2)}</strong>
@@ -546,7 +546,7 @@ export const SpcOutputCanvas: React.FC<SpcOutputCanvasProps> = ({
                 <div>
                   <strong className="font-semibold">Ajuste de Especificação (Limites Invertidos Corrigidos):</strong>
                   <p className="mt-0.5 text-amber-800">
-                    Os valores de LIE ({specs.lsl}) e LSE ({specs.usl}) foram informados invertidos. O sistema normalizou automaticamente para <strong>LIE = {capability.effectiveLsl}</strong> e <strong>LSE = {capability.effectiveUsl}</strong>, garantindo que os índices <strong>Cp, Cpk, Pp e Ppk resultem em valores positivos</strong> conformes à norma AIAG CEP 4ª Edição e AIAG & VDA 1ª Edição.
+                    Os valores de LIE ({specs.lsl}) e LSE ({specs.usl}) foram informados invertidos. O sistema normalizou automaticamente para <strong>LIE = {capability.effectiveLsl}</strong> e <strong>LSE = {capability.effectiveUsl}</strong>, garantindo que os índices <strong>Cp, Cpk, Pp e Ppk resultem em valores positivos</strong> conformes à norma Manual AIAG – 2ª edição e AIAG & VDA 1ª Edição.
                   </p>
                 </div>
               </div>
@@ -573,11 +573,11 @@ export const SpcOutputCanvas: React.FC<SpcOutputCanvasProps> = ({
               note={`Nível de não-conformidade esperado: ${capability.ppmTotalExpected.toLocaleString()} PPM | Não-conformidade observada: ${capability.ppmObserved.toLocaleString()} PPM.${capability.rawCpk != null && capability.rawCpk < 0 ? ' Nota: A média está além do limite de especificação; o índice Cpk físico é considerado 0,000 (incapaz).' : ''}`}
             />
 
-            {/* Memorial de Cálculo Passo a Passo (AIAG CEP 4ª Edição / AIAG & VDA) */}
+            {/* Memorial de Cálculo Passo a Passo (Manual AIAG – 2ª edição / AIAG & VDA) */}
             <div className="bg-white p-5 rounded-lg border border-slate-200/90 shadow-xs space-y-3">
               <div className="flex items-center justify-between pb-2 border-b border-slate-100">
                 <div className="font-serif font-bold text-slate-900 text-sm">
-                  Memorial de Cálculo Detalhado (Conforme Manual AIAG CEP 4ª Ed. / AIAG & VDA)
+                  Memorial de Cálculo Detalhado (Conforme Manual AIAG – 2ª edição / AIAG & VDA)
                 </div>
                 <div className="text-[11px] font-mono bg-red-50 text-red-900 px-2.5 py-0.5 rounded border border-red-200 font-semibold">
                   σ_within = Amplitude Média (R̄) ÷ d₂

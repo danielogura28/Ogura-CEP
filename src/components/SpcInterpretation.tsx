@@ -59,7 +59,7 @@ export const SpcInterpretation: React.FC<SpcInterpretationProps> = ({
           </h4>
         </div>
         <div className="text-[11px] font-mono text-slate-500">
-          Referência: <strong>{isAIAG_VDA ? 'AIAG & VDA (1ª Ed.)' : 'AIAG CEP (4ª Ed.)'}</strong>
+          Referência: <strong>{isAIAG_VDA ? 'AIAG & VDA (1ª Ed.)' : 'Manual AIAG – 2ª edição'}</strong>
         </div>
       </div>
 
@@ -72,19 +72,19 @@ export const SpcInterpretation: React.FC<SpcInterpretationProps> = ({
           (desvio padrão dentro dos subgrupos σ_within = {limits.sigmaWithin.toFixed(3)}).{' '}
           {isProcessInControl ? (
             <span className="text-emerald-900 bg-emerald-50/70 p-0.5 rounded">
-              O processo encontra-se em <strong>estrito estado de controle estatístico</strong> conforme o {isAIAG_VDA ? 'Manual Harmonizado AIAG & VDA (1ª Edição)' : 'Manual AIAG CEP (4ª Edição)'}. Nenhuma das regras de causa especial (Regras de Nelson / Western Electric) foi violada, indicando variabilidade decorrente unicamente de causas comuns.
+              O processo encontra-se em <strong>estrito estado de controle estatístico</strong> conforme o {isAIAG_VDA ? 'Manual Harmonizado AIAG & VDA (1ª Edição)' : 'Manual AIAG – 2ª edição'}. Nenhuma das regras de causa especial (Regras de Nelson / Western Electric) foi violada, indicando variabilidade decorrente unicamente de causas comuns.
             </span>
           ) : (
             <span className="text-red-900 bg-red-50/70 p-0.5 rounded">
               O processo está <strong>fora de controle estatístico</strong>, tendo sido detectadas{' '}
-              <strong>{violations.length} ocorrências de causas especiais</strong>. Conforme diretriz do {isAIAG_VDA ? 'Manual AIAG & VDA' : 'Manual AIAG 4ª Ed.'}, causas especiais exigem parada ou bloqueio de lote e neutralização de fatores extrínsecos antes da liberação.
+              <strong>{violations.length} ocorrências de causas especiais</strong>. Conforme diretriz do {isAIAG_VDA ? 'Manual AIAG & VDA' : 'Manual AIAG – 2ª edição'}, causas especiais exigem parada ou bloqueio de lote e neutralização de fatores extrínsecos antes da liberação.
             </span>
           )}
         </p>
 
         {/* Paragraph 2: Capability Analysis */}
         <p>
-          <strong>2. Capabilidade & Desempenho Segundo o Manual {isAIAG_VDA ? 'AIAG & VDA' : 'AIAG 4ª Ed.'}:</strong>{' '}
+          <strong>2. Capabilidade & Desempenho Segundo o {isAIAG_VDA ? 'Manual AIAG & VDA' : 'Manual AIAG – 2ª edição'}:</strong>{' '}
           {capability.cpk !== null ? (
             <span>
               O índice de capabilidade potencial atingiu Cp = {capability.cp?.toFixed(3) ?? '—'}, enquanto o índice efetivo centrado resultou em{' '}
@@ -149,7 +149,7 @@ export const SpcInterpretation: React.FC<SpcInterpretationProps> = ({
       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-sans">
         <span className="flex items-center gap-1.5">
           <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
-          Conforme diretrizes {isAIAG_VDA ? 'AIAG & VDA FMEA / Process Capability (1ª Ed.)' : 'AIAG SPC Manual (4ª Edição)'} e ISO 7870
+          Conforme diretrizes {isAIAG_VDA ? 'AIAG & VDA FMEA / Process Capability (1ª Ed.)' : 'Manual AIAG – 2ª edição'} e ISO 7870
         </span>
         <span>JASP Quality Control v0.19</span>
       </div>

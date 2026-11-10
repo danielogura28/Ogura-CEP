@@ -743,7 +743,7 @@ export const NewChartSetupModal: React.FC<NewChartSetupModalProps> = ({
                   onChange={(e) => setManualStandard(e.target.value as SpcManualStandard)}
                   className="w-full bg-white border border-slate-300 rounded-md px-2.5 py-1.5 text-xs text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <option value="AIAG_SPC_4TH">Manual AIAG CEP (4ª Edição)</option>
+                  <option value="AIAG_SPC_4TH">Manual AIAG – 2ª edição</option>
                   <option value="AIAG_VDA_1ST">Manual Harmonizado AIAG & VDA (1ª Edição)</option>
                 </select>
                 <span className="text-[10px] text-slate-500 block mt-1">Define as regras e fórmulas de dispersão</span>

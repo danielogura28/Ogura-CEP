@@ -183,7 +183,7 @@ export const ChartManualGuideModal: React.FC<ChartManualGuideModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
-                  Manual AIAG SPC 4ª Ed. / AIAG & VDA
+                  Manual AIAG – 2ª edição / AIAG & VDA
                 </span>
                 <span className="text-xs text-blue-400 font-semibold font-mono">
                   {badgeLabel}

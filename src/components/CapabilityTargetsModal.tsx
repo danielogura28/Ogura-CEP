@@ -216,7 +216,7 @@ export const CapabilityTargetsModal: React.FC<CapabilityTargetsModalProps> = ({
                     <h4 className="font-semibold text-slate-900 text-sm">{targetName}</h4>
                   </div>
                   <span className="text-[11px] font-mono text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded">
-                    Norma: {config.manualStandard === 'AIAG_VDA_1ST' ? 'AIAG & VDA 1ª Ed.' : 'AIAG 4ª Ed.'}
+                    Norma: {config.manualStandard === 'AIAG_VDA_1ST' ? 'AIAG & VDA 1ª Ed.' : 'Manual AIAG – 2ª edição'}
                   </span>
                 </div>
 

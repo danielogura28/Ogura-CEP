@@ -17,7 +17,8 @@ import {
   FileSpreadsheet,
   Loader2,
   Target,
-  Sliders
+  Sliders,
+  Lock
 } from 'lucide-react';
 import { SPC_DATASETS } from '../utils/spcDatasets';
 import { FeatureClassification, SpcManualStandard } from '../types';
@@ -49,6 +50,7 @@ interface SpcHeaderProps {
   onOpenCriticalAnalysis?: () => void;
   hasCriticalIssue?: boolean;
   hasCriticalAnalysisSaved?: boolean;
+  onLockApp?: () => void;
 }
 
 export const SpcHeader: React.FC<SpcHeaderProps> = ({
@@ -76,7 +78,8 @@ export const SpcHeader: React.FC<SpcHeaderProps> = ({
   onScrollToOperatorGuide,
   onOpenCriticalAnalysis,
   hasCriticalIssue = false,
-  hasCriticalAnalysisSaved = false
+  hasCriticalAnalysisSaved = false,
+  onLockApp
 }) => {
   return (
     <header className="bg-slate-900 text-white border-b border-slate-800 select-none shrink-0 shadow-md">
@@ -108,10 +111,10 @@ export const SpcHeader: React.FC<SpcHeaderProps> = ({
               value={manualStandard}
               onChange={(e) => onChangeManualStandard(e.target.value as SpcManualStandard)}
               className="bg-transparent text-slate-100 font-medium text-xs focus:outline-hidden cursor-pointer"
-              title="Alternar entre Manual AIAG CEP 4ª Edição e Manual Harmonizado AIAG & VDA 1ª Edição"
+              title="Alternar entre Manual AIAG – 2ª edição e Manual Harmonizado AIAG & VDA 1ª Edição"
             >
               <option value="AIAG_SPC_4TH" className="bg-slate-800 text-white">
-                Manual AIAG CEP (4ª Edição)
+                Manual AIAG – 2ª edição
               </option>
               <option value="AIAG_VDA_1ST" className="bg-slate-800 text-white">
                 Manual AIAG & VDA (1ª Edição)
@@ -317,6 +320,17 @@ export const SpcHeader: React.FC<SpcHeaderProps> = ({
           >
             <RotateCcw className="w-3.5 h-3.5" />
           </button>
+
+          {onLockApp && (
+            <button
+              onClick={onLockApp}
+              className="px-2 py-1 bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-800/80 rounded-md text-xs font-medium flex items-center gap-1 transition-colors cursor-pointer"
+              title="Bloquear aplicativo com senha de proteção"
+            >
+              <Lock className="w-3 h-3 text-red-400" />
+              <span className="hidden xl:inline">Bloquear</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -329,7 +343,7 @@ export const SpcHeader: React.FC<SpcHeaderProps> = ({
 
         <div className="flex items-center gap-1 px-2.5 py-1 bg-slate-700/60 text-slate-200 rounded font-medium border border-slate-600/50">
           <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Capabilidade ({manualStandard === 'AIAG_VDA_1ST' ? 'AIAG&VDA Cp/Cpk' : 'AIAG 4ª Ed.'})</span>
+          <span>Capabilidade ({manualStandard === 'AIAG_VDA_1ST' ? 'AIAG&VDA Cp/Cpk' : 'Manual AIAG – 2ª edição'})</span>
         </div>
 
         <div className="flex items-center gap-1 px-2.5 py-1 bg-slate-700/60 text-red-200 rounded font-medium border border-slate-600/50">

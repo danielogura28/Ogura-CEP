@@ -438,7 +438,7 @@ export function computeProcessCapability(
     if (cpl !== null && cpu !== null) {
       rawCpk = Math.min(cpl, cpu);
       // Se a média do processo está dentro da tolerância, rawCpk já é positivo!
-      // Conforme manual AIAG CEP 4ª Edição e práticas de chão de fábrica,
+      // Conforme Manual AIAG – 2ª edição e práticas de chão de fábrica,
       // a capabilidade física tem piso em 0 (não existe capabilidade negativa de produção).
       cpk = rawCpk < 0 ? 0 : rawCpk;
     }

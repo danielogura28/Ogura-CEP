@@ -130,7 +130,7 @@ export interface CepAnalysisConfig {
   subgroupSize: number; // Tamanho do subgrupo racional (padrão 1 para I-MR, 5 para Xbar)
 
   // Standard norm selection & capability targets
-  manualStandard: SpcManualStandard; // AIAG CEP 4ª Edição vs AIAG & VDA 1ª Edição
+  manualStandard: SpcManualStandard; // Manual AIAG – 2ª edição vs AIAG & VDA 1ª Edição
   featureClassification: FeatureClassification; // Padrão, Crítica, etc.
   targetCpk?: number; // Meta mínima de Cpk (ex: 1.33, 1.50, 1.67, 2.00)
   targetPpk?: number; // Meta mínima de Ppk (ex: 1.33, 1.67, 2.00)

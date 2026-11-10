@@ -97,7 +97,7 @@ export const ChartGuideButton: React.FC<ChartGuideButtonProps> = ({
     borderColor = 'border-amber-600';
     badgeTheme = 'bg-amber-50 text-amber-800 border-amber-200';
     pulseDotColor = 'bg-amber-600';
-    cardTitle = 'Carta de Dispersão (Manual AIAG SPC 4ª Ed.)';
+    cardTitle = 'Carta de Dispersão (Manual AIAG – 2ª edição)';
     cardCategory = 'Variabilidade de Curto Prazo';
   } else if (isXbar) {
     borderColor = 'border-sky-600';

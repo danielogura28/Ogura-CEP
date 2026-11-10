@@ -503,7 +503,7 @@ export const PrintPreviewModal: React.FC<PrintPreviewModalProps> = ({
                     Referência:{' '}
                     {isAIAG_VDA
                       ? 'Manual Harmonizado AIAG & VDA (1ª Edição)'
-                      : 'Manual AIAG CEP (4ª Edição)'}
+                      : 'Manual AIAG – 2ª edição'}
                   </div>
                 </div>
 
@@ -1240,7 +1240,7 @@ export const PrintPreviewModal: React.FC<PrintPreviewModalProps> = ({
               </div>
 
               <div className="text-[9px] text-center text-slate-400 font-mono pt-3">
-                Relatório gerado em conformidade com o Manual AIAG CEP (4ª Edição) e AIAG & VDA (1ª Edição) • PTP -
+                Relatório gerado em conformidade com o Manual AIAG – 2ª edição e AIAG & VDA (1ª Edição) • PTP -
                 Controle Estatístico de Processo
               </div>
             </div>
